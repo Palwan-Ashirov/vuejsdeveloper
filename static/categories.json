@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Электроника",
+    "sort": "300",
+    "code": "electronics"
+  },
+  {
+    "id": 2,
+    "title": "Косметика",
+    "sort": "400",
+    "code": "beauty"
+  },
+  {
+    "id": 3,
+    "title": "Детские товары",
+    "sort": "500",
+    "code": "kids"
+  },
+  {
+    "id": 4,
+    "title": "Ювелирные украшения",
+    "sort": "500",
+    "code": "jewellery"
+  },
+  {
+    "id": 5,
+    "title": "Игры",
+    "sort": "500",
+    "code": "games"
+  },
+  {
+    "id": 6,
+    "title": "Книги",
+    "sort": "900",
+    "code": "books"
+  },
+  {
+    "id": 7,
+    "title": "Товары для дома",
+    "sort": "1100",
+    "code": "homegoods"
+  },
+  {
+    "id": 8,
+    "title": "Развлечения",
+    "sort": "1200",
+    "code": "hobby"
+  }
+]

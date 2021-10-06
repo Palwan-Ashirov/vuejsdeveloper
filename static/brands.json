@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "title": "Бренд 1",
+    "code": "brand-1",
+    "image": "https://i.giftery.ru/upload/iblock/870/870be12e4e50d167006024225115e51d.jpg",
+    "faces": ["500", "1000", "1500", "2000", "3000", "5000"],
+    "categories": [1, 2]
+  },
+  {
+    "id": 2,
+    "title": "Бренд 2",
+    "code": "brand-2",
+    "image": "https://i.giftery.ru/upload/iblock/870/870be12e4e50d167006024225115e51d.jpg",
+    "faces": ["1000", "2000", "3000", "5000"],
+    "categories": [1]
+  },
+  {
+    "id": 3,
+    "title": "Бренд 3",
+    "code": "brand-3",
+    "image": "https://i.giftery.ru/upload/iblock/870/870be12e4e50d167006024225115e51d.jpg",
+    "faces": ["100", "200", "300", "500"],
+    "categories": [2, 7]
+  },
+  {
+    "id": 4,
+    "title": "Бренд 4",
+    "code": "brand-4",
+    "image": "https://i.giftery.ru/upload/iblock/870/870be12e4e50d167006024225115e51d.jpg",
+    "faces": ["1000", "2000", "3000", "5000"],
+    "categories": [6]
+  },
+  {
+    "id": 5,
+    "title": "Бренд 5",
+    "code": "brand-5",
+    "image": "https://i.giftery.ru/upload/iblock/870/870be12e4e50d167006024225115e51d.jpg",
+    "faces": ["1000", "2000", "3000", "5000"],
+    "categories": [5]
+  },
+  {
+    "id": 6,
+    "title": "Бренд 6",
+    "code": "brand-6",
+    "image": "https://i.giftery.ru/upload/iblock/870/870be12e4e50d167006024225115e51d.jpg",
+    "faces": ["500", "1000", "1500", "2000", "3000", "5000"],
+    "categories": [5]
+  },
+  {
+    "id": 7,
+    "title": "Бренд 7",
+    "code": "brand-7",
+    "image": "https://i.giftery.ru/upload/iblock/870/870be12e4e50d167006024225115e51d.jpg",
+    "faces": ["1000", "2000", "3000", "5000"],
+    "categories": [5]
+  },
+  {
+    "id": 8,
+    "title": "Бренд 8",
+    "code": "brand-8",
+    "image": "https://i.giftery.ru/upload/iblock/870/870be12e4e50d167006024225115e51d.jpg",
+    "faces": [],
+    "categories": [5]
+  },
+  {
+    "id": 9,
+    "title": "Бренд 9",
+    "code": "brand-9",
+    "image": "https://i.giftery.ru/upload/iblock/870/870be12e4e50d167006024225115e51d.jpg",
+    "faces": ["1000", "2000", "3000", "5000"],
+    "categories": [8]
+  },
+  {
+    "id": 10,
+    "title": "Бренд 10",
+    "code": "brand-10",
+    "image": "https://i.giftery.ru/upload/iblock/870/870be12e4e50d167006024225115e51d.jpg",
+    "faces": ["500", "1000", "1500", "2000", "3000", "5000"],
+    "categories": [4]
+  },
+  {
+    "id": 11,
+    "title": "Бренд 11",
+    "code": "brand-11",
+    "image": "https://i.giftery.ru/upload/iblock/870/870be12e4e50d167006024225115e51d.jpg",
+    "faces": ["1000", "2000", "3000", "5000"],
+    "categories": [2, 6]
+  },
+  {
+    "id": 12,
+    "title": "Бренд 12",
+    "code": "brand-12",
+    "image": "https://i.giftery.ru/upload/iblock/870/870be12e4e50d167006024225115e51d.jpg",
+    "faces": ["1000", "2000", "3000", "5000"],
+    "categories": [1]
+  },
+  {
+    "id": 13,
+    "title": "Бренд 13",
+    "code": "brand-13",
+    "image": "https://i.giftery.ru/upload/iblock/870/870be12e4e50d167006024225115e51d.jpg",
+    "faces": ["500", "1000", "1500", "2000", "3000", "5000"],
+    "categories": [1]
+  }
+]
