@@ -42,7 +42,9 @@ export default {
           const cardItem = {
             title: card.title,
             img: card.image,
-            nominal: nominals
+            nominal: parseInt(nominals),
+            count: 1,
+            total: nominals
           }
           this.choosenFace = null
           this.$store.commit('addToCard', cardItem)
@@ -56,22 +58,22 @@ export default {
 
 <style scoped>
 .card_list{
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
-    .card_item{
-        max-width: 320px;
-        height: auto;
-        border: 1px solid #000;
-        border-radius: 15px;
-        margin: 10px;
-        overflow: hidden;
-    }
-    .card_item img{
-        width: 100%;
-        height: auto;
-    }
-    .card_item h1{
-        text-align: center;
-    }
+.card_item{
+  max-width: 320px;
+  height: auto;
+  border: 1px solid #000;
+  border-radius: 15px;
+  margin: 10px;
+  overflow: hidden;
+}
+.card_item img{
+  width: 100%;
+  height: auto;
+}
+.card_item h1{
+  text-align: center;
+}
 </style>

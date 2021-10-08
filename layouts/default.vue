@@ -20,7 +20,7 @@
 export default {
   computed: {
     counter () {
-      return this.$store.state.count
+      return this.$store.state.categories.length
     }
   }
 }
