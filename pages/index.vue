@@ -67,6 +67,9 @@ export default {
 .index_page{
   display: flex;
 }
+.card{
+  width: 100%;
+}
 .menu{
   min-width: 20%;
 }
