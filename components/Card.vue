@@ -9,8 +9,8 @@
           <label :for="`${card.id}-${face}`">{{ face }}</label>
         </div>
       </div>
-      <button v-if="card.faces.length > 0" class="card_btn" @click="add(card,choosenFace)">
-        Add to basket
+      <button v-if="card.faces.length > 0" class="card_btn" @click="addCardToBasket(card,choosenFace)">
+        Добавить в корзину
       </button>
       <span v-else class="absent_product">Нет в наличии</span>
     </div>
@@ -31,7 +31,7 @@ export default {
     }
   },
   methods: {
-    add (card, face) {
+    addCardToBasket (card, face) {
       if (face) {
         if (card.title === face.split('-')[0]) {
           let nominals = ''
@@ -50,7 +50,7 @@ export default {
             total: nominals
           }
           this.choosenFace = null
-          this.$store.commit('addToCard', cardItem)
+          this.$store.commit('addCard', cardItem)
         }
       }
     }
@@ -63,7 +63,7 @@ export default {
 .card_list{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 .card_item{
   width: 30%;
@@ -80,11 +80,11 @@ export default {
 .card_item:hover{
   transform: scale(1.025);
 }
-.card_item img{
+.card_item > img{
   width: 100%;
   height: auto;
 }
-.card_item h1{
+.card_item > h1{
   margin: 15px 0px;
 }
 .form_radio_list{
@@ -96,21 +96,21 @@ export default {
   display: inline-block;
   margin: 5px 5px;
 }
-.form_radio_btn input[type=radio]{
+.form_radio_btn > input[type=radio]{
   display: none;
 }
-.form_radio_btn label{
+.form_radio_btn > label{
   display: inline-block;
   border: 1px solid #f16536;
   cursor: pointer;
   border-radius: 3px;
   color: #f16536;
 }
-.form_radio_btn input[type=radio]:checked + label{
+.form_radio_btn > input[type=radio]:checked + label{
   background-color: #f16536;
   color: #fff;
 }
-.form_radio_btn label:hover{
+.form_radio_btn > label:hover{
   opacity: 0.4;
 }
 .card_btn{

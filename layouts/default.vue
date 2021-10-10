@@ -21,7 +21,7 @@
 export default {
   computed: {
     counter () {
-      return this.$store.state.categories.length
+      return this.$store.state.cards.length
     }
   }
 }

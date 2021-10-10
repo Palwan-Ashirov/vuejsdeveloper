@@ -10,7 +10,7 @@
         <span>Количество</span>
         <span>Итого</span>
       </li>
-      <li v-for="post,id in allCategories" :key="id" class="basket_card">
+      <li v-for="post,id in allCards" :key="id" class="basket_card">
         <img :src="post.img" alt="Product image">
         <h2>
           {{ post.title }}
@@ -23,7 +23,7 @@
             +
           </button>
           <span>{{ post.count }}</span>
-          <button :disabled="$store.state.categories[id].count < 1" @click="changeCounter(id,-1)">
+          <button :disabled="$store.state.cards[id].count < 1" @click="changeCounter(id,-1)">
             -
           </button>
         </div>
@@ -42,13 +42,14 @@
 
 <script>
 import { mapGetters } from 'vuex'
+
 export default {
   computed: {
-    ...mapGetters(['allCategories', 'totalPrice'])
+    ...mapGetters(['allCards', 'totalPrice'])
   },
   methods: {
     changeCounter (post, step) {
-      this.$store.commit('addToCounter', { post, step })
+      this.$store.commit('quantityCard', { post, step })
     },
     remove (index) {
       this.$store.commit('removeCard', { index })
@@ -61,6 +62,13 @@ export default {
 .basket_head{
   text-align: center;
   margin: 10px;
+}
+.basket_card_title{
+  display: grid;
+  grid-template-columns: 45% 15% 15% 15% 10%;
+  border-bottom: 1px solid #000;
+  align-items: center;
+  padding: 10px 0;
 }
 .basket_card{
   display: grid;
@@ -80,26 +88,19 @@ export default {
   height: auto;
   grid-area: img;
 }
-.basket_card .price{
+.basket_card > .price{
   grid-area: price;
 }
-.basket_card .counter_btn{
+.basket_card > .counter_btn{
   grid-area: count;
 }
-.basket_card .card_total{
+.basket_card > .card_total{
   grid-area: total;
 }
-.basket_card_title{
-  display: grid;
-  grid-template-columns: 45% 15% 15% 15% 10%;
-  border-bottom: 1px solid #000;
-  align-items: center;
-  padding: 10px 0;
-}
-.counter_btn button{
+.counter_btn > button{
   width: 20px;
 }
-.counter_btn span{
+.counter_btn > span{
   margin: 0 8px;
 }
 .delete_btn{
@@ -108,8 +109,9 @@ export default {
   height: 35px;
   grid-area: delbtn;
   margin-left: 10px;
+  cursor: pointer;
 }
-.delete_btn img {
+.delete_btn > img {
   background-color: #f16536;
   width: 100%;
   height: 100%;
@@ -123,7 +125,7 @@ export default {
   float: right;
   margin-right: 20px;
 }
-.total_price button{
+.total_price > button{
   background-color: #f16536;
   color: #fff;
   cursor: pointer;
@@ -132,7 +134,7 @@ export default {
   padding: 10px;
   margin: 15px;
 }
-.total_price button:active{
+.total_price > button:active{
   transform: scale(1.01);
   border-color: #000;
 }
@@ -146,7 +148,7 @@ export default {
                          "img price total delbtn";
   text-align: center;
   }
-  .counter_btn span{
+  .counter_btn > span{
   margin: 0 3px;
 }
 }

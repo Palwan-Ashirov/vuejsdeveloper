@@ -4,38 +4,38 @@ export const actions = {
   }
 }
 
-export const state = {
-  categories: []
-}
+export const state = () => ({
+  cards: []
+})
 export const mutations = {
-  addToCard (state, data) {
+  addCard (state, data) {
     let target = 0
     let i
-    for (i = 0; i < state.categories.length; i++) {
-      if (state.categories[i].title === data.title && state.categories[i].nominal === data.nominal) {
+    for (i = 0; i < state.cards.length; i++) {
+      if (state.cards[i].title === data.title && state.cards[i].nominal === data.nominal) {
         target = 1; break
       }
     }
-    if (target === 0) { state.categories.push(data) } else {
-      state.categories[i].count += 1
+    if (target === 0) { state.cards.push(data) } else {
+      state.cards[i].count += 1
     }
   },
-  addToCounter (state, { post, step }) {
-    state.categories[post].count += step
-    state.categories[post].total = state.categories[post].count * state.categories[post].nominal
+  quantityCard (state, { post, step }) {
+    state.cards[post].count += step
+    state.cards[post].total = state.cards[post].count * state.cards[post].nominal
   },
   removeCard (state, index) {
-    state.categories.splice(index.index, 1)
+    state.cards.splice(index.index, 1)
   }
 }
 export const getters = {
-  allCategories (state) {
-    return state.categories
+  allCards (state) {
+    return state.cards
   },
   totalPrice (state) {
     let price = 0
-    for (let i = 0; i < state.categories.length; i++) {
-      price += parseInt(state.categories[i].total)
+    for (let i = 0; i < state.cards.length; i++) {
+      price += parseInt(state.cards[i].total)
     }
     return price
   }
