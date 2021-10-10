@@ -5,13 +5,20 @@ export const actions = {
 }
 
 export const state = {
-  categories: [],
-  count: 0
+  categories: []
 }
 export const mutations = {
   addToCard (state, data) {
-    state.categories.push(data)
-    state.count++
+    let target = 0
+    let i
+    for (i = 0; i < state.categories.length; i++) {
+      if (state.categories[i].title === data.title && state.categories[i].nominal === data.nominal) {
+        target = 1; break
+      }
+    }
+    if (target === 0) { state.categories.push(data) } else {
+      state.categories[i].count += 1
+    }
   },
   addToCounter (state, { post, step }) {
     state.categories[post].count += step
@@ -20,7 +27,6 @@ export const mutations = {
   removeCard (state, index) {
     state.categories.splice(index.index, 1)
   }
-
 }
 export const getters = {
   allCategories (state) {

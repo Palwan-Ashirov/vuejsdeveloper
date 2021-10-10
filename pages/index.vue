@@ -50,18 +50,51 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
 .index_page{
   display: flex;
   justify-content: space-between;
 }
 .menu{
-  width: 20%;
+  max-width: 20%;
 }
 .card{
   width: 80%;
 }
+.menu_list{
+  margin-top: 10px;
+  border-radius: 15px;
+  padding: 5px 5px 5px;
+  box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+}
 .menu_item{
   list-style: none;
+  margin-bottom: 8px;
+}
+.menu_item input[type=radio] {
+  display: none;
+}
+.menu_item input[type=radio]:checked + label{
+  color: #f16536;
+  border-bottom: 1px solid #f16536;
+}
+.menu_item label{
+  cursor: pointer;
+  font-size: 18px;
+
+}
+.menu_item label:hover{
+  color: #f16536;
+  border-bottom: 1px solid #f16536;
+  opacity: 0.6;
+}
+@media (max-width:768px){
+  .menu{
+    display: none;
+  }
+  .card{
+    width: 100%;
+  }
 }
 </style>
