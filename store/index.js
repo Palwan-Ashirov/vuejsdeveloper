@@ -1,9 +1,3 @@
-export const actions = {
-  totalPrices ({ commit }) {
-    commit('prices')
-  }
-}
-
 export const state = () => ({
   cards: []
 })
@@ -18,6 +12,7 @@ export const mutations = {
     }
     if (target === 0) { state.cards.push(data) } else {
       state.cards[i].count += 1
+      state.cards[i].total = state.cards[i].count * state.cards[i].nominal
     }
   },
   quantityCard (state, { post, step }) {
@@ -28,6 +23,7 @@ export const mutations = {
     state.cards.splice(index.index, 1)
   }
 }
+
 export const getters = {
   allCards (state) {
     return state.cards
