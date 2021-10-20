@@ -3,21 +3,18 @@ export const state = () => ({
 })
 export const mutations = {
   addCard (state, data) {
-    let target = 0
-    let i
-    for (i = 0; i < state.cards.length; i++) {
-      if (state.cards[i].title === data.title && state.cards[i].nominal === data.nominal) {
-        target = 1; break
-      }
-    }
-    if (target === 0) { state.cards.push(data) } else {
-      state.cards[i].count += 1
-      state.cards[i].total = state.cards[i].count * state.cards[i].nominal
+    const card = state.cards.find(item => item.title === data.title && item.nominal === data.nominal)
+    if (!card) { state.cards.push(data) } else {
+      state.cards.forEach((item) => {
+        if (item.title === data.title && item.nominal === data.nominal) {
+          quantityTotal(item, 1)
+        }
+      })
     }
   },
   quantityCard (state, { post, step }) {
-    state.cards[post].count += step
-    state.cards[post].total = state.cards[post].count * state.cards[post].nominal
+    const card = state.cards[post]
+    quantityTotal(card, step)
   },
   removeCard (state, index) {
     state.cards.splice(index.index, 1)
@@ -30,9 +27,14 @@ export const getters = {
   },
   totalPrice (state) {
     let price = 0
-    for (let i = 0; i < state.cards.length; i++) {
-      price += parseInt(state.cards[i].total)
-    }
+    state.cards.forEach((element) => {
+      price += parseInt(element.total)
+    })
     return price
   }
+}
+
+export const quantityTotal = (card, step) => {
+  card.count += step
+  card.total = card.count * card.nominal
 }
